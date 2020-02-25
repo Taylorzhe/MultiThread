@@ -12,11 +12,11 @@ public class WaitNotifyReleaseOwnMonitor {
             @Override
             public void run() {
                 synchronized (resourceA){
-                    System.out.println("ThreadA got resourceA lock");
+                    System.out.println("ThreadA got resourceA interfacelock");
                     synchronized (resourceB){
-                        System.out.println("ThreadA got resourceB lock");
+                        System.out.println("ThreadA got resourceB interfacelock");
                         try {
-                            System.out.println("ThreadA release resourceA lock");
+                            System.out.println("ThreadA release resourceA interfacelock");
                             resourceA.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -35,12 +35,12 @@ public class WaitNotifyReleaseOwnMonitor {
                     e.printStackTrace();
                 }
                 synchronized (resourceA){
-                    System.out.println("ThreadB got resourceB lock");
-                    System.out.println("ThreadB try to got resourceB lock");
+                    System.out.println("ThreadB got resourceB interfacelock");
+                    System.out.println("ThreadB try to got resourceB interfacelock");
 
                 }
                 synchronized (resourceB){
-                    System.out.println("ThreadB got resourceB lock");
+                    System.out.println("ThreadB got resourceB interfacelock");
                 }
             }
         });

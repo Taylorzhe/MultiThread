@@ -30,7 +30,7 @@ public class WaitNotifyAll implements Runnable{
     public void run() {
         synchronized (resourceA){
             try {
-                System.out.println(Thread.currentThread().getName() + "got resourceA lock");
+                System.out.println(Thread.currentThread().getName() + "got resourceA interfacelock");
                 System.out.println(Thread.currentThread().getName() + "wait to start");
                 resourceA.wait();
                 System.out.println(Thread.currentThread().getName() + "'s waiting to end");
